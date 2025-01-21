@@ -24,7 +24,11 @@ const authorSchema = new mongoose.Schema({
     type: String,
     required: [true, "Please add a description"],
     maxlength: [500, "Description cannot be more than 500 characters"],
-  }
+  },
+  books: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Book',
+  }],
 },{timestamps:true});
 
 module.exports = mongoose.model("Author", authorSchema);

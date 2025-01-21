@@ -1,6 +1,7 @@
 const express = require("express")
 const router = express.Router();
 const authorsRoutes = require("./authorRoutes")
+const booksRoutes = require("./bookRoutes")
 
 // localhost:3000/api/v1/
 router.get("/", (req,res)=>{
@@ -8,5 +9,6 @@ router.get("/", (req,res)=>{
 })
 
 router.use("/authors", authorsRoutes)
+router.use("/books", booksRoutes)
 
 module.exports = router;

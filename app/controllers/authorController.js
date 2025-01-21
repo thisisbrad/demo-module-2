@@ -11,7 +11,7 @@ const createAuthor = async (req,res) => {
 const getAuthorById = async (req,res)=>{
     console.log(req.params.id)
     try {
-        const author = await Author.findById(req.params.id)
+        const author = await Author.findById(req.params.id).populate("books")
     res.status(200).json({"data": author,"success":true})
     } catch (error) {
         // look for mongoose errors
